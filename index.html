@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>PORTFOLIO</h1>
+
+    <div class="btn-group">
+      <button class="btn" onclick="window.open('geopo/index.html','_blank')">Geopolitic analysis</button>
+      <button class="btn" onclick="window.open('jv/index.html','_blank')">Gaming redaction</button>
+      <button class="btn" onclick="openModal()">Curriculum Vitae</button>
+      <button class="btn" onclick="window.open('https://raphixg.github.io/Sehep/characters.html','_blank')">Artist
+        website example</button>
+      <button class="btn" onclick="window.open('steinsgate/index2.html','_blank')">Steins;Gate Timeline</button>
+    </div>
+
+    <div class="toggle-group">
+      <div class="toggle-item">
+        <div class="toggle-header" onclick="toggleSection(this)">
+          <span class="toggle-title">Political Science background</span>
+          <span class="toggle-arrow">▶</span>
+        </div>
+        <div class="toggle-content">
+          <li>- <span style="color:brown">Master's degree</span> (international relations and political science)</li>
+          <li>- <span style="color:brown">Political violence</span> (automation project and research papers)</li>
+          <li>- <span style="color:brown">Indo-Pacific</span> focus</li>
+          <li>- Quantitative analysis (survey on media) & qualitative (sentiment analysis)</li>
+          <li>- Investigations (OSINT & media monitoring)</li>
+        </div>
+      </div>
+      <div class="toggle-item">
+        <div class="toggle-header" onclick="toggleSection(this)">
+          <span class="toggle-title">Computer science background</span>
+          <span class="toggle-arrow">▶</span>
+        </div>
+        <div class="toggle-content">
+          <li>- IT Bachelor & self-taught</li>
+          <li>- <span style="color:brown">Investigation</span> (OSINT, python, Maltego, personal tools sheet, Rene
+            Molenaar trainings)</li>
+          <li>- <span style="color:brown">Networking</span> (GNS3, CISCO, BURP, personal sheet and projects)</li>
+          <li>- <span style="color:brown">Pentesting</span> (bash scripting, kali/linux env)</li>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Open modal preventing the access for CV  -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2>To access CV</h2>
+      <p>Enter password : </p>
+      <input type="password" id="passwordInput" placeholder="password">
+      <div class="modal-buttons">
+        <button class="btn modal-btn" onclick="checkPassword()">VALID</button>
+        <button class="btn modal-btn" onclick="closeModal()">CANCEL</button>
+      </div>
+      <p id="errorMsg" style="color:#8b0000; margin-top:10px; display:none;">Incorrect</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleSection(header) {
+      const content = header.nextElementSibling;
+      const arrow = header.querySelector('.toggle-arrow');
+      content.classList.toggle('open');
+      arrow.textContent = content.classList.contains('open') ? '▼' : '▶';
+    }
+
+    // Password check for CV access
+    const PASSWORD_HASH = 'eb796eb52fc6ba9116eb75c41d152a65';
+    function openModal() {
+      document.getElementById('modal').style.display = 'flex';
+      document.getElementById('passwordInput').value = '';
+      document.getElementById('errorMsg').style.display = 'none';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    function checkPassword() {
+      const input = document.getElementById('passwordInput').value;
+      const inputHash = CryptoJS.MD5(input).toString();
+
+      if (inputHash === PASSWORD_HASH) {
+        sessionStorage.setItem('cvAccess', 'true'); 
+        window.open('cv/cv.html', '_blank');
+        closeModal();
+      } else {
+        document.getElementById('errorMsg').style.display = 'block';
+        document.getElementById('passwordInput').value = '';
+      }
+    }
+
+    // Fermer en cliquant en dehors
+    window.onclick = function (event) {
+      if (event.target === document.getElementById('modal')) {
+        closeModal();
+      }
+    }
+
+  </script>
+</body>
+
+</html>

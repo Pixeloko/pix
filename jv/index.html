@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Rédaction Web JV</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Portfolio Redactrice Web JV</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Portfolio global</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2>Articles courts </h2><h3> Exemples de sujets "chauds"</h3>
+    <div class="carousel-container">
+        <div class="carousel-track" id="carouselTrack">
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-btn prev-btn">‹</button>
+            <button class="carousel-btn next-btn">›</button>
+        </div>
+    </div>
+    <h2>Articles longs</h2> <h3>Propositions personnelles</h3>
+    <div class="carousel-container2">
+        <div class="carousel-track2" id="carouselTrack2">
+        </div>
+        <div class="carousel-controls2">
+            <button class="carousel-btn prev-btn2">‹</button>
+            <button class="carousel-btn next-btn2">›</button>
+        </div>
+    </div>
+    <script>
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const carouselTrack = document.getElementById('carouselTrack');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+
+            let currentPosition = 0;
+            const cardWidth = carouselTrack.parentElement.offsetWidth;
+
+            // Fonction pour créer les cartes d'articles
+            function createArticleCards() {
+                carouselTrack.innerHTML = '';
+
+                articles.forEach(article => {
+                    const card = document.createElement('div');
+                    card.className = 'article-card';
+
+                    card.innerHTML = `
+                <div class="article-card-content">
+                    <span class="article-subject">${article.subject}</span>
+                    <h4 class="article-title">${article.title}</h4>
+                    <p class="article-description">${article.description}</p>
+                    <p class="article-subtitle1">${article.subtitle1}</p>
+                    <p class="article-text1">${article.text1}</p>
+                    <p class="article-subtitle2">${article.subtitle2}</p>
+                    <p class="article-text2">${article.text2}</p>
+                    <div class="article-length">
+                        <p>${article.length} mots</p>
+                    </div>
+                </div>
+            `;
+
+                    carouselTrack.appendChild(card);
+                });
+            }
+
+            // Navigation
+            function moveCarousel(direction) {
+                const containerWidth = carouselTrack.parentElement.offsetWidth;
+
+                if (direction === 'next') {
+                    currentPosition = Math.min(currentPosition + containerWidth, (articles.length - 1) * containerWidth);
+                } else {
+                    currentPosition = Math.max(currentPosition - containerWidth, 0);
+                }
+                carouselTrack.style.transform = `translateX(-${currentPosition}px)`;
+            }
+
+            // Événements
+            prevBtn.addEventListener('click', () => moveCarousel('prev'));
+            nextBtn.addEventListener('click', () => moveCarousel('next'));
+
+            // Initialisation
+            createArticleCards();
+
+            // CARROUSEL 2 (DUPLIQUÉ)
+            const carouselTrack2 = document.getElementById('carouselTrack2');
+            const prevBtn2 = document.querySelector('.prev-btn2');
+            const nextBtn2 = document.querySelector('.next-btn2');
+            let currentPosition2 = 0;
+            
+            function createArticleCards2() {
+                carouselTrack2.innerHTML = '';
+                articles2.forEach(article2 => {
+                    const card = document.createElement('div');
+                    card.className = 'article-card';
+                    card.innerHTML = `
+                <div class="article-card-content">
+                    <span class="article-subject">${article2.subject2}</span>
+                    <h4 class="article-title">${article2.title2}</h4>
+                    <p class="article-description">${article2.description2}</p>
+                    <p class="article-subtitle1">${article2.subtitle12}</p>
+                    <p class="article-text1">${article2.text12}</p>
+                    <p class="article-subtitle2">${article2.subtitle22}</p>
+                    <p class="article-text2">${article2.text22}</p>
+                    <p class="article-subtitle2">${article2.subtitle3}</p>
+                    <p class="article-text2">${article2.text3}</p>
+                    <p class="article-subtitle2">${article2.subtitle4}</p>
+                    <p class="article-text2">${article2.text4}</p>
+                    <p class="article-subtitle2">${article2.subtitle5}</p>
+                    <p class="article-text2">${article2.text5}</p>
+                    <div class="article-length">
+                        <p>${article2.length2} mots</p>
+                    </div>
+                </div>
+            `;
+                    carouselTrack2.appendChild(card);
+                });
+            }
+            
+            function moveCarousel2(direction) {
+                const containerWidth = carouselTrack2.parentElement.offsetWidth;
+                if (direction === 'next') {
+                    currentPosition2 = Math.min(currentPosition2 + containerWidth, (articles.length - 1) * containerWidth);
+                } else {
+                    currentPosition2 = Math.max(currentPosition2 - containerWidth, 0);
+                }
+                carouselTrack2.style.transform = `translateX(-${currentPosition2}px)`;
+            }
+            
+            prevBtn2.addEventListener('click', () => moveCarousel2('prev'));
+            nextBtn2.addEventListener('click', () => moveCarousel2('next'));
+            createArticleCards2();
+        });
+    </script>
+    <script src="articles.js"></script>
+</body>
+
+
+<footer>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Portfolio global</a></li>
+        </ul>
+    </nav>
+</footer>
+
+
+
+</html>
