@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes de géopolitique</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Portfolio Rédaction d'articles analytiques en relations internationales et géopolitiques</h1>
+    </header>
+
+    <section class="container">
+        <div id="presentation">
+            <h2>Presentation</h2>
+            <p>
+                L'auteur de ces articles est diplômé d'un master en science politique à majeure internationale. En plus du parcours académique, plusieurs expériences professionnelles liées au domaine de la recherche ont été acquises.
+                Trois articles ont été réalisés au cours des six années d'études ainsi que plusieurs articles de divers types (note de synthèse, commentaire), dont en voici un échantillon ci-dessous.
+            </p>
+        </div>
+    </section>
+    <h2 id="page_title">Sélection d'articles</h2>
+    <nav>
+        <ul id="buttons">
+            <li><a href="#"><button id="1">L’eau : source de richesse, pouvoir et de conflits</button></a></li>
+            <li><a href="#"><button id="2">Sociétés militaires privées : symptôme de l’externalisation de la guerre</button></a></li>
+            <li><a href="#"><button id="3">La défense aérienne, un enjeu européen</button></a></li>
+            <li><a href="#"><button id="4">Analyse de données : les forces aériennes dans le cas de la guerre RU-UKR</button></a></li>
+            <li><a href="#"><button id="5">Le réveil de L’Asie centrale et sa quête de stabilité régionale</button></a></li>
+        </ul>
+    </nav>
+    <section id="reading">
+    </section>
+        <script type="module"> // For import/export 
+            import { articles } from './articles.js'
+            let pasting = document.getElementById('reading')
+            document.addEventListener('click', function (event) // Get all information about the button clicked
+        {
+            if( event.target.tagName == 'BUTTON' || event.target.closest('button')){
+                event.preventDefault() // Prevent the usual behavious (href sening to url #)
+                
+                let button
+                if(event.target.tagName === 'BUTTON'){
+                    button = event.target // Contains the html element, not just the tagName 
+                } else {
+                    button = event.target.closest('button')
+                }
+
+                // Get the button id
+                let buttonId = parseInt(button.id)
+
+                // Find the article linked to the id
+                let foundArticle = articles.find(article => article.id == buttonId)
+            
+                if (foundArticle){
+                    pasting.innerHTML = `
+                        <div style="text-align:center;color:black;background-color:snow; border-radius: 20px;padding-bottom: 40px">
+                        ${foundArticle.title ? `<h2 style="font-size: 2em">${foundArticle.title}</h2>` : ""}
+                        ${foundArticle.text ? `<div style="justify-content:center"><p style="text-align:left; padding-left: 30px; padding-right: 100px">${foundArticle.text}</p></div>` : ""}
+                        ${foundArticle.subtitle1 ? `<p><strong>${foundArticle.subtitle1}</strong></p>` : ""}
+                        ${foundArticle.text1 ? `<div style="justify-content:center"><p style="text-align:left; padding-left: 100px; padding-right: 100px">${foundArticle.text1}</p></div>` : ""}
+                        ${foundArticle.subtitle2 ? `<p><strong>${foundArticle.subtitle2}</strong></p>` : ""}
+                        ${foundArticle.text2 ? `<div style="justify-content:center"><p style="text-align:left; padding-left: 100px; padding-right: 100px">${foundArticle.text2}</p></div>` : ""}
+                        ${foundArticle.subtitle3 ? `<p><strong>${foundArticle.subtitle3}</strong></p>` : ""}
+                        ${foundArticle.text3 ? `<div style="justify-content:center"><p style="text-align:left; padding-left: 100px; padding-right: 100px">${foundArticle.text3}</p></div>` : ""}
+                        ${foundArticle.subtitle4 ? `<p><strong>${foundArticle.subtitle4}</strong></p>` : ""}
+                        ${foundArticle.text4 ? `<div style="justify-content:center"><p style="text-align:left; padding-left: 100px; padding-right: 100px">${foundArticle.text4}</p></div>` : ""}
+                        ${foundArticle.subtitle5 ? `<p><strong>${foundArticle.subtitle5}</strong></p>` : ""}
+                        ${foundArticle.text5 ? `<div style="justify-content:center"><p style="text-align:left; padding-left: 100px; padding-right: 100px">${foundArticle.text5}</p></div>` : ""}
+                        ${foundArticle.subtitle6 ? `<p><strong>${foundArticle.subtitle6}</strong></p>` : ""}
+                        ${foundArticle.text6 ? `<div style="justify-content:center"><p style="text-align:left; padding-left: 100px; padding-right: 100px">${foundArticle.text6}</p></div>` : ""}
+                        ${foundArticle.subtitle7 ? `<p><strong>${foundArticle.subtitle7}</strong></p>` : ""}
+                        ${foundArticle.text7 ? `<div style="justify-content:center"><p style="text-align:left; padding-left: 100px; padding-right: 100px">${foundArticle.text7}</p></div>` : ""}
+                        ${foundArticle.subtitle8 ? `<p><strong>${foundArticle.subtitle8}</strong></p>` : ""}
+                        ${foundArticle.text8 ? `<div style="justify-content:center"><p style="text-align:left; padding-left: 100px; padding-right: 100px">${foundArticle.text8}</p></div>` : ""}
+                        ${foundArticle.subtitle9 ? `<p><strong>${foundArticle.subtitle9}</strong></p>` : ""}
+                        ${foundArticle.text9 ? `<div style="justify-content:center"><p style="text-align:left; padding-left: 100px; padding-right: 100px">${foundArticle.text9}</p></div>` : ""}
+                        ${foundArticle.subtitle10 ? `<p><strong>${foundArticle.subtitle10}</strong></p>` : ""}
+                        ${foundArticle.text10 ? `<div style="justify-content:center"><p style="text-align:left; padding-left: 100px; padding-right: 100px">${foundArticle.text10}</p></div>` : ""}
+                        ${foundArticle.subtitle11 ? `<p><strong>${foundArticle.subtitle11}</strong></p>` : ""}
+                        ${foundArticle.text11 ? `<div style="justify-content:center"><p style="text-align:left; padding-left: 100px; padding-right: 100px">${foundArticle.text11}</p></div>` : ""}
+                        ${foundArticle.subtitle12 ? `<p><strong>${foundArticle.subtitle12}</strong></p>` : ""}
+                        ${foundArticle.text12 ? `<div style="justify-content:center"><p style="text-align:left; padding-left: 100px; padding-right: 100px">${foundArticle.text12}</p></div>` : ""}
+                        ${foundArticle.subtitle13 ? `<p><strong>${foundArticle.subtitle13}</strong></p>` : ""}
+                        ${foundArticle.text13 ? `<div style="justify-content:center"><p style="text-align:left; padding-left: 100px; padding-right: 100px">${foundArticle.text13}</p></div>` : ""}
+                        ${foundArticle.subtitle14 ? `<p><strong>${foundArticle.subtitle14}</strong></p>` : ""}
+                        ${foundArticle.text14 ? `<div style="justify-content:center"><p style="text-align:left; padding-left: 100px; padding-right: 100px">${foundArticle.text14}</p></div>` : ""}
+                        ${foundArticle.sources ? `<h2>Sources</h2><ol style="text-align:left">${foundArticle.sources}</ol>` : ""}
+                        ${foundArticle.date ? `<p style="font-size: 12px; color: grey"><i>${foundArticle.date}</i></p>` : ""}
+                        </div>
+                    `;                    
+                }
+            }
+        })
+        </script>
+</body>
+
+
+<footer>
+</footer>
+
+
+
+</html>
