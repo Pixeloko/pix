@@ -23,6 +23,7 @@
             --beta: #ffcf3a;
             --alpha: #ff5d6c;
             --sg: #23f0a6;
+            --delta: white;
         }
 
         * {
@@ -184,6 +185,9 @@
         .legend .chip.sg i {
             background: var(--sg);
         }
+        .legend .chip.delta i {
+            background: var(--delta);
+        }
 
         .legend .chip.active {
             color: var(--txt);
@@ -203,6 +207,11 @@
         .legend .chip.sg.active {
             border-color: var(--sg);
             box-shadow: 0 0 14px rgba(35, 240, 166, .25);
+        }
+
+        .legend .chip.delta.active {
+            border-color: var(--sg);
+            box-shadow: 0 0 14px rgba(235, 239, 237, 0.25);
         }
 
         .legend .arr {
@@ -491,6 +500,11 @@
             font-weight: 700;
         }
 
+        .t-d {
+            color: var(--delta);
+            font-weight: 700;
+        }
+
         footer {
             text-align: center;
             padding: 40px 20px 80px;
@@ -606,7 +620,7 @@
 
     <!-- ============================== HEADER ============================== -->
     <header>
-        <div class="tag">Anime Timeline +</div>
+        <div class="tag">Timeline</div>
         <h1>STEINS;GATE</h1>
         <div class="explain" style="color:#8a93a8; font-style: italics; font-family:'Courier New', Courier, monospace;">
             <p>Do as you please : follow EP numbering or take a look at attractor fields' events</p>
@@ -623,6 +637,8 @@
         <a href="#wl-3" class="chip sg" data-target="wl-3"><i></i>χ CHI</a>
         <span class="arr">→</span>
         <a href="#wl-0" class="chip beta" data-target="wl-0"><i></i>β BETA</a>
+        <span class="arr">→</span>
+        <a href="#wl-4" class="chip delta" data-target="wl-4"><i></i>δ Delta</a>
     </nav>
 
     <!-- ============================== TIMELINE ============================== -->
@@ -630,7 +646,7 @@
 
 
     <footer>
-        <div>Steins;Gate the Anime Timeline <br>- 2026 -</div>
+        <div>Steins;Gate - a Timeline <br>- 2026 -</div>
     </footer>
 
     <!-- ============================== DATA + RENDER ============================== -->
@@ -695,14 +711,14 @@
             },
             {
                 id: 'wl-0', greek: 'β', name: 'Beta', cls: 'beta', off: 0, railX: 24,
-                div: { from: 'sg', to: 'beta', num: '1.048596', cls: 't-sg' },
+                div: { from: 'sg', to: 'beta', cls: 't-sg' },
                 events: [
                     { date: '1975', ep:'SG0', title: 'Suzuha acquires the IBN'},
                     { date: '1998', ep:'SG0 EP4', title: 'Suzuha lost Kagari', desc: ['Searching her, Suzuha wasted fuel', `Gave up, went to <a href="#event-07-28-b" class="t-b dmail-link" data-target="event-07-28-b">07-28-2010<img src="${ICON_TIME_MACHINE}" " class="dmail-icon time-machine"></a>`, '__ITER__ 1.053649%' ,'Kagari is not brainwashed']},
                     { id: 'event-07-28-b', date: '07-28-2010', ep: 'EP1,23,24', title: 'Dr. Nakabachi\'s conference', desc: ['Time machine crash — Suzuha arrives from 2036', 'Metal Upa picked up by Mayuri; she loses it › Kurisu picks it up and places it next to the thesis', 'The banana experiment', 'First meeting with Kurisu at the conference, she dies', `1st D-Mail sent to Daru to July 23rd > shift to <a href="#event-07-28-a" class="t-a dmail-link" data-target="event-07-28-a">0.571024α <img src="${ICON_PHONE}" " class="dmail-icon"></a>`, '__ITER__ ITERATION FROM 08-21', 'Meets Kurisu, who drops her envelope (Okabe will place the metal Upa next to it). Kurisu says she met present Okabe 15 min earlier', 'To destroy the academic empire he left, Dr. Nakabachi wants to publish her paper under his own name', 'Okabe accidentally kills Kurisu; he screams, and present Okabe hears it', `Physical travel to <a href="#event-08-21" class="t-b dmail-link" data-target="event-08-21">08-21, 17:56<img src="${ICON_TIME_MACHINE}" " class="dmail-icon time-machine"></a>`, '__ITER__ iteration from 08-21', 'Gets the metal Upa; Mayuri gets the green one', 'Fake blood has dried', 'Okabe tasers Kurisu and is stabbed by Nakabachi, who steals the thesis and flees. Past Okabe witnesses the scene › 3 weeks of suffering = loop preserved', `Physical return to 08-21 › <a href="#event-08-21-sg" class="t-sg dmail-link" data-target="event-08-21-sg">1.048596%<img src="${ICON_TIME_MACHINE}" " class="dmail-icon time-machine"></a>`] },
                     { id: 'event-08-21', date: '08-21-2010', ep: 'EP23,24,23b, SG0 EP23', title: 'Attempts to save Kurisu & the world', desc: ['__ITER__ ITERATION CONTINUATION FROM 08-17 alpha - 1.130205β', 'Okabe sees the machine has a passenger seat; gives his phone to Mayuri', `Cheered on by Mayuri and Daru, physical travel to <a href="#wl-0" class="t-b dmail-link" data-target="wl-0">07-28<img src="${ICON_TIME_MACHINE}" " class="dmail-icon time-machine"></a>`, '__ITER__Iteration from 07-28', 'After the failure, Suzuha says they have fuel for one more round', 'Okabe gets a message to watch the news: Nakabachi arrived in Russia; thanks to the metal Upa, the envelope survived the plane fire › WWIII begins. Mayuri slaps him to keep going', 'Suzuha presents 2025 Okabe\'s video (received 07-28, unwatchable then because experiencing Kurisu\'s death was necessary)', `Physical travel to <a href="#wl-0" class="t-b dmail-link" data-target="wl-0">07-28, 11:51AM<img src="${ICON_TIME_MACHINE}" " class="dmail-icon time-machine"></a>`, '__ITER__Iteration FROM 07-28 (EP23b)', 'Okabe does not open the movie mail; Mayuri begs him to stop › beginning of Steins;Gate 0', 'Phone wave incomplete', 'Kurisu\'s thesis is stolen by her father, who flees to Russia', '__ITER__ ITERATION FROM 07-07-2011', 'Future Mayuri cheers Mayuri to encourage Okabe to save Kurisu > no more fuel, pulled in 18000BC (they will be saved by 2025 Okabe, disappearing from the line to ensure his "death")'] },
                     { date: '12-xx-2010', ep: 'SG0 EP1-6', title: 'Amadeus & Kagari introduced', desc: ['Amadeus presentation based on Kurisu\'s research and her memory from 8 months ago. Also meets Moeka (part-time editor + Rounder)', 'Christmas party preparation', 'Okabe calls Amadeus; Maho reminds him she is dead', 'Dream about <b class="t-b">1.382733β</b>: Soviets invading Japan + Leskinen\'s shadow › Reading Steiner activates, meaning the divergence changed. Cause: an organization manipulates fate', 'Amane says she is looking for a girl (Kagari) who came with her from 2036 but got separated in 1998 Akihabara. Okabe asks Moeka to investigate', 'Kagari found at Luka\'s shrine (one of her dad\'s acquaintance), having green Upa from her mom'] },
-                    { date: '12-15-2010', ep: 'SGO EP23 - 1.129848β', title:'D-RINE deceive the world received'},
+                    { date: '12-15-2010 - 1.129848β', ep: 'SGO EP23', title:'D-RINE deceive the world received'},
                     { date: '12-31-2010', ep: 'SG0 EP6,7', title: 'New year attack and hack', desc: ['DURPA attack because they got Kagari, one attacker has biker helmet > Braun saves them (still Rounders chief)', `Amadeus is hacked but calls Okabe begging for help, he responds allowing SERN to steal Kurisu\'s theory, beta premise is broken > reading steiner activation > shift to <a href="#event-01-02" class="t-a dmail-link" data-target="event-01-02">alpha 01-02-2011</a>`] },
                     { id: 'event-01-05', date: '01-05-2011', ep: 'SG0 EP9-13', title: 'The PC and Kagari disappearance', desc: ['Okabe wakes up in hospital, was found with Nakase in lab, she dreamt about Mayuri being dead and that she worked at May Queen. Both collapsed. Had been an explosion & hotel theft (organization searching for Kurisu\'s PC)', 'Maho comes to live with Faris', 'Russia begins time-travel testing', 'Suzuha says she only can jump once or twice on 6 months, used machine too much to find Kagari', 'Amadeus is back', 'Maho reveals she has PC, Daru able to retrieve the content', 'Ambush between US & RU organizations, Okabe+Maho+Daru in-between, PC destroyed by russians', 'Maho & Leskinen return to USA with Amadeus', 'Kagari disappears for "several months", Moeka & Okabe finds an unregistered building where Kagari has awaken'] },
                     { date: '06-xx-2011', ep: 'SG0 EP14,15', title: 'Hope to change the fate', desc: ['Daru gathered pieces of time leap machine destroyed by Okabe and asks Maho to help rebuild it', 'Meets Leskinen at Japan hospital, Maho still in US', 'Kagari returns to the lab in biker clothes', 'Maho back to Japan'] },
@@ -715,13 +731,21 @@
 
                 ]
             },
+            {
+                id: 'wl-4', greek: 'δ', name: 'Delta', cls: 'delta', off: 70, railX: 94,
+                div: { from: 'beta', to: 'delta', cls: 't-d' },
+                events: [
+                    { date: '08-11-2010', ep: 'Hiyoku Renri no Sweets Final', title: 'FG#14 incident', desc: ['Broadcasting of Kurisu’s dream in all Akihabara analog TV']}
+                ]
+            }
 
         ];
 
         const COLORS = {
             beta: getComputedStyle(document.documentElement).getPropertyValue('--beta').trim(),
             alpha: getComputedStyle(document.documentElement).getPropertyValue('--alpha').trim(),
-            sg: getComputedStyle(document.documentElement).getPropertyValue('--sg').trim()
+            sg: getComputedStyle(document.documentElement).getPropertyValue('--sg').trim(),
+            delta: getComputedStyle(document.documentElement).getPropertyValue('--delta').trim()
         };
 
         function liItems(desc) {
