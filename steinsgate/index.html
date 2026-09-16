@@ -210,7 +210,7 @@
         }
 
         .legend .chip.delta.active {
-            border-color: var(--sg);
+            border-color: var(--delta);
             box-shadow: 0 0 14px rgba(235, 239, 237, 0.25);
         }
 
@@ -586,6 +586,10 @@
             z-index: 10;
         }
 
+        .popup-text {
+            text-align: center;
+        }
+
         /* ============================== RESPONSIVE ============================== */
         @media (max-width: 640px) {
             .worldline {
@@ -611,6 +615,10 @@
             .legend .chip {
                 font-size: .6rem;
                 padding: 5px 9px;
+            }
+
+            .popup-text {
+                max-width: 300px;
             }
         }
     </style>
@@ -917,10 +925,12 @@
 
     </script>
     <div id="popup" class="popup" onclick="closePopup()">
-        <p>This page is currently receiving new timeline data</p>
-        <p>- (manga, CD Drama...) -</p>
-        <p>Feel free to contact the owner for question or any kind report</p>
-        <p>[click to exit]</p>
+        <section class="popup-text">
+            <p>This page is currently receiving new timeline data</p>
+            <p>- (manga, CD Drama...) -</p>
+            <p>Feel free to contact the owner for question or any kind report</p>
+            <p>[click to exit]</p>
+        </section>
     </div>
 
     <script>
