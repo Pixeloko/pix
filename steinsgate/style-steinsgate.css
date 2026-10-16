@@ -1,0 +1,814 @@
+:root {
+  --bg: black;
+  --panel : #0b0b0b;
+  --line: #1d1d1d;
+  --txt: rgb(234, 234, 234);
+  --dim: rgb(230, 230, 230);
+  --faint: #4e4e4e;
+  --beta: #164fde;
+  --alpha: #d9c032;
+  --sg: #f5f7f0;
+  --delta: #d672d0;
+  --gamma: orange;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--txt);
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  background: url("https://c02.purpledshub.com/uploads/sites/48/2022/05/star-altair-46e4790.jpg?w=1200");
+  background-repeat:initial;
+  opacity: 0.13;
+  position: fixed; 
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ============================== HEADER ============================== */
+header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 20px;
+}
+
+header h1 {
+  font-family: "SilkRCourriemington";
+  font-size: clamp(2.6rem, 9vw, 6rem);
+  font-weight: 700;
+  letter-spacing: clamp(4px, 2vw, 18px);
+  line-height: 1;
+  text-shadow: 1px 1px 10px lightblue;
+  color: var(--txt);
+}
+
+header .tag {
+  margin-top: 26px;
+  font-size: 0.8rem;
+  letter-spacing: 5px;
+  color: var(--faint);
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+
+.explain {
+  padding-top: 10px;
+  max-width: 500px;
+  color: var(--faint);
+}
+
+/* ============================== TIMELINE WRAP ============================== */
+.timeline {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 70px 20px 160px;
+  position: relative;
+}
+
+/* ---- divergence connector ---- */
+.divergence {
+  position: relative;
+  height: 96px;
+}
+
+.divergence svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.div-path{
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  stroke-width: 3;
+  transition: stroke-dashoffset 1.4s ease;
+}
+
+.divergence.visible .div-path {
+  stroke-dashoffset: 0;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ============================== WORLDLINES ============================== */
+.worldline {
+  position: relative;
+  margin-left: var(--off, 0px);
+  margin-bottom: -10px;
+}
+
+.worldline .rail {
+  position: absolute;
+  left: 23.5px;
+  top: 0;
+  bottom: -24px;
+  width: 3px;
+  background: var(--c);
+  box-shadow: 0 0 16px 1px var(--c);
+  transform: scaleY(0);
+  transform-origin: top; 
+  transition: transform 1.1s ease;
+  opacity: 0.85;
+}
+
+.worldline.visible .rail {
+  transform: scaleY(1);
+  top: -10px;
+}
+
+.wl-head {
+  position: relative;
+  padding: 0px 0 8px 56px;
+  opacity: 0;
+  transform: translateX(-14px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.worldline.visible .wl-head {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.wl-head .greek {
+  position: absolute;
+  left: -2px;
+  top: -6px;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 2.9rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--c);
+  text-shadow: 0 0 24px var(--c);
+  width: 48px;
+  text-align: center;
+}
+
+.wl-head .name {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--c);
+  text-transform: uppercase;
+}
+
+/* ============================== EVENT NODE ============================== */
+.event {
+  position: relative;
+  padding-left: 56px;
+  margin-bottom: 26px;
+  opacity: 0;
+  transform: translateX(-12px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.event.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.event::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 7px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--c);
+  box-shadow: 0 0 10px var(--c);
+  z-index: 2;
+  transition: transform 0.25s ease;
+}
+
+.event:hover::before {
+  transform: scale(1.35);
+}
+
+.event .card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.035),
+    rgba(255, 255, 255, 0.01)
+  );
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--c);
+  border-radius: 10px;
+  padding: 12px 16px;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.event.has-detail .card {
+  cursor: pointer;
+}
+
+.event .card:hover {
+  border-color: var(--c);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+}
+
+.event .top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.event .date {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.66rem;
+  letter-spacing: 2px;
+  color: var(--c);
+  border: 1px solid var(--c);
+  padding: 2px 8px;
+  border-radius: 5px;
+  opacity: 0.9;
+}
+
+.event .ep {
+  font-size: 0.58rem;
+  letter-spacing: 1px;
+  color: var(--faint);
+  border: 1px solid var(--line);
+  padding: 2px 7px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.event .title {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--txt);
+  margin-top: 8px;
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+}
+
+.event .arrow {
+  flex: none;
+  font-size: 0.65rem;
+  color: var(--c);
+  transition: transform 0.3s ease;
+  transform: translateY(-1px);
+}
+
+.event.open .arrow {
+  transform: rotate(90deg) translateX(-1px);
+}
+
+.event .detail {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition:
+    grid-template-rows 0.4s ease,
+    opacity 0.4s ease,
+    margin 0.4s ease;
+  opacity: 0;
+  margin-top: 0;
+}
+
+.event.open .detail {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: 12px;
+}
+
+.event .detail-inner {
+  overflow: hidden;
+}
+
+.event ul {
+  list-style: none;
+}
+
+.event li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 0.82rem;
+  color: var(--dim);
+  margin-bottom: 5px;
+}
+
+.event li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: var(--c);
+  font-weight: 700;
+}
+
+.event li.iter {
+  list-style: none;
+  padding: 4px 10px;
+  margin: 10px 0 6px;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 2px;
+  color: #181819;
+  border-left: 2px solid #181819;
+  background: #5b6478;
+  text-transform: uppercase;
+}
+
+.event li.iter::before {
+  content: "↓";
+  color: #181819;
+  position: static;
+  margin-right: 6px;
+}
+
+/* worldlines */
+.t-a {
+  color: var(--alpha);
+  font-weight: 700;
+}
+
+.t-b {
+  color: var(--beta);
+  font-weight: 700;
+}
+
+.t-sg {
+  color: var(--sg);
+  font-weight: 700;
+}
+
+.t-d {
+  color: var(--delta);
+  font-weight: 700;
+}
+
+.t-g {
+  color: var(--gamma);
+  font-weight: 700;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px 80px;
+  color: var(--faint);
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================== BUTTONS ============================== */
+/* "Upload font"*/
+input[type="file"] {
+  display: none;
+}
+
+.upload-button {
+  color: var(--faint);
+  font-family: "SteinsGate", sans-serif;
+  font-size: clamp(0.6rem, 3vw, 6rem);
+  text-decoration: none;
+  letter-spacing: -5px;
+}
+
+.upload-button:hover{
+  color: var(--sg);
+}
+
+#scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  color: white;
+  font-size: 20px;
+  font-family: "JetBrains Mono", monospace;
+  background: transparent;
+  border-radius: 50px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  box-shadow: 0 0 10px #d9c032;
+}
+
+#scroll-to-top:hover {
+  color: #d9c032;
+  box-shadow: 0 0 20px snow;
+}
+
+/* ---- D-Mail ---- */
+.dmail-link {
+  display: inline-flex;
+  /* align text and icon */
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+
+.dmail-icon {
+  width: 20px;
+  height: auto;
+  display: inline-block;
+  transition: transform 0.1s ease;
+  vertical-align: middle;
+}
+
+.icon-leap {
+  width: 40px;
+  height: auto;
+}
+
+.dmail-icon.time-machine {
+  width: 50px;
+}
+
+.dmail-link:active .dmail-icon {
+  animation: vibrate 0.3s ease-in-out;
+}
+
+@keyframes vibrate {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(-4px, 2px);
+  }
+
+  40% {
+    transform: translate(4px, -2px);
+  }
+
+  60% {
+    transform: translate(-2px, 4px);
+  }
+
+  80% {
+    transform: translate(2px, -4px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+
+
+/* ============================== RESPONSIVE ============================== */
+@media (max-width: 640px) {
+  .worldline {
+    margin-left: 0 !important;
+    margin-top: -50px;
+    margin-bottom: -50px;
+  }
+
+  .worldline .rail {
+    left: 20px;
+  }
+
+  .divergence {
+    left: 0;
+  }
+
+  .timeline {
+    padding: 50px 14px 120px;
+  }
+
+  .wl-head {
+    padding-left: 50px;
+  }
+
+  .wl-head .greek {
+    font-size: 2.2rem;
+  }
+
+  .event {
+    padding-left: 48px;
+  }
+
+  .legend .chip {
+    font-size: 0.6rem;
+  }
+
+}
+
+/* ============================== FIRST NAV ============================== */
+.legend {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+.legend .chip {
+  border: var(--faint) solid 0.2px;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+/* ============================== DIVERGENCE SEARCH ============================== */
+.divergence-search {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 14px 14px 12px;
+  background: var(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /*Safari*/
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.divergence-search-desc {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.divergence-search form {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  max-width: 660px;
+  align-items: center;
+}
+
+.divergence-search input {
+  flex: 1;
+  border: 1px solid var(--line);
+  background-color: var(--panel);
+  border-radius: 100px;
+  padding: 10px 18px;
+  color: var(--txt);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  outline: none;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+  }
+  
+  .divergence-search input:focus {
+  border-color: var(--sg);
+  box-shadow: 0 0 0 3px rgba(35, 240, 166, 0.15);
+}
+
+  .divergence-search input::placeholder {
+    color: var(--faint);
+    letter-spacing: 1px;
+  }
+
+.divergence-search input.invalid {
+  border-color: red;
+}
+
+.error-keepout {
+  position: fixed;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  z-index: 10;
+} 
+
+.divergence-search button {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 10px 18px;
+  color: var(--txt);
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  font-size: 0.68rem;
+  cursor: pointer;
+  transition:
+    border-color 0.3s,
+    background 0.3s,
+    color 0.3s;
+}
+
+.divergence-search button[type="submit"]:hover {
+  border-color: var(--sg);
+  background: rgba(35, 240, 166, 0.08);
+  color: var(--sg);
+}
+
+.divergence-search button[type="button"]:hover {
+  border-color: var(--sg);
+  background: rgba(255, 93, 108, 0.08);
+  color: var(--sg);
+}
+
+.no-result {
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--dim);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.no-result b {
+  color: var(--txt);
+  font-style: normal;
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* ============================== READING STEINER ============================== */
+.glitch-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background: rgba(4, 5, 10, 0);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.18s ease,
+    background 0.18s ease;
+  overflow: hidden;
+}
+
+.glitch-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+  background: rgba(4, 5, 10, 0.93);
+}
+
+.glitch-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.05) 0px,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.glitch-overlay::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--gc, #fff),
+    transparent
+  );
+  opacity: 0.12;
+  filter: blur(6px);
+  animation: sweep 1.1s linear infinite;
+}
+
+@keyframes sweep {
+  from {
+    top: -120px;
+  }
+
+  to {
+    top: 100%;
+  }
+}
+
+.glitch-meter {
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(2.4rem, 11vw, 6.4rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--gc, #e7ecf5);
+  text-shadow:
+    0 0 34px var(--gc, #e7ecf5),
+    3px 0 #ff004c,
+    -3px 0 #00e5ff;
+  position: relative;
+  z-index: 1;
+  animation: glitchShift 0.11s steps(2) infinite;
+}
+
+.glitch-meter .pct {
+  font-size: 0.4em;
+  opacity: 0.7;
+  margin-left: 0.12em;
+}
+
+@keyframes glitchShift {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(-2px, 1px);
+  }
+
+  50% {
+    transform: translate(2px, -1px);
+  }
+
+  75% {
+    transform: translate(-1px, -1px);
+  }
+
+  100% {
+    transform: translate(1px, 1px);
+  }
+}
+
+.glitch-label {
+  font-family: "Chakra Petch", sans-serif;
+  letter-spacing: 0.55em;
+  font-size: 0.7rem;
+  color: var(--gc, #e7ecf5);
+  opacity: 0.82;
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+}
+
+.timeline.swapping {
+  animation: crtIn 0.5s ease;
+}
+
+@keyframes crtIn {
+  0% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(8px);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+
+  .divergence-search input {
+    font-size: 0.78rem;
+    padding: 9px 14px;
+  }
+
+  .divergence-search button {
+    padding: 9px 14px;
+    font-size: 0.6rem;
+  }
+}
+
+@font-face {
+  font-family: "SteinsGate";
+  src: url('../medias/Steinsgatelow-Regular.ttf') format('truetype');
+}
