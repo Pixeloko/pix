@@ -584,7 +584,9 @@ const WORLDLINES = [
         title: "Amadeus call",
         desc:[
           "Okabe does not answer > <span class='t-b'>1.081163% (Twin Automata)</span>",
-          `Okabe answers the call > <a href="#event-01-02" class="t-a dmail-link">0.571082% (Antinomic Dual)</a>`
+          `Okabe answers the call > <a href="#event-01-02" class="t-a dmail-link">0.571082% (Antinomic Dual)</a>`,
+          "__ITER__ 1.053649%",
+          "Kagari starts working at Braun's shop"
         ]
       },
       {
@@ -607,6 +609,74 @@ const WORLDLINES = [
           "Judy shoots Leskinen (lethal), Moeka rescues Maho and gives password to Reyes. Judy shoots Moeka but the Rounder kicks her back",
           "Amadeus reveals Kurisu's laptop passcode to Maho (Piano SOnata II) before her deletion"
         ],
+      },
+      {
+        date: "01-06-2011 - 1.053649%",
+        ep: "SG0 AD",
+        title: "Maho learns everything",
+        desc:[
+          "Okabe offers a pink bunny fork to Kagari",
+          "He tells Maho everything. They start building Time Leap Machine upgraded version",
+          "Wako lab pillage",
+        ]
+      },
+      {
+        date: "01-11-2011 - 1.053649%",
+        ep: "SG0 AD",
+        title: "Maho and Daru's achievements",
+        desc:[
+          "Daru hacks SERN, Maho finished the Time Leap Machine",
+          "Maho's hotel room is ransacked"
+        ]
+      },
+      {
+        date: "01-15-2011 - 1.053649%",
+        ep: "SG0 AD",
+        title: "STRATFOR is fooled",
+        desc:[
+          "Suzuha baits STRATFOR faking she is Kagari",
+          "Daru hacks STRATFOR",
+          "Okabe hesitates to overwrite Kagari's memory with Time Leap Machine upgraded, Kurisu's memories pick up the phone > RS activates <span class='t-b'>1.064756% Recursive Mother Goose</span>",
+          "Okabe willingly answers the phone to Kagari's temple > RS activates <span class='t-b'>1.055821% Promised Rinascimento</span>"
+        ]
+      },
+      {
+        date: "01-16-2011 - 1.053649%",
+        ep: "SG0 RMG",
+        title: "Kagari is hit by a truck",
+        desc:[
+          "Kagari only remembers her past. Guided by GOD's voice, she gets hit by a truck. She remembers her past memories."
+        ]
+      },
+      {
+        id:"event-01-31",
+        date: "01-31-2011 - 1.055821%",
+        ep: "SG0 PR",
+        title: "Maho backups Okabe's memory into Amadeus system",
+        desc:[
+          "Hououin Kyouma revival. Kagari, Maho, Luka and Faris become lab members"
+        ]
+      },
+      {
+        date: "02-02-2011",
+        ep: "SG0 PR",
+        title: "Operation Salieri",
+        desc:[
+          "The lab tricks STRATFOR with noisy data location to avoid the organization to interfere with their hacking. Moeka leaks they posess Kurisu's laptop to bait them",
+          "Brainwashed Kagari is proposed in exchange of the laptop + hard drive",
+          "In Denki basement Reyes fails to overwrite Kagari's and her own memories because Daru deleted Kurisu's data. Consequently, Reyes is now an empty shell"
+        ]
+      },
+      {
+        date: "02-06-2011",
+        ep: "SG0 PR",
+        title: "OSHMFUFAHSA badges distribution",
+      },
+      {
+        date: "02-18-2011",
+        ep: "SG0 PR",
+        title: "Phonewave is upgraded to send D-Rine",
+        desc:["Launch of Helheim Operation, they send the 'deceive the world' D-Rine"]
       },
       {
         date: "02-xx-2011 - 1.081163%",
@@ -648,7 +718,7 @@ const WORLDLINES = [
       {
         id: "event-07-07",
         date: "07-07-2011",
-        ep: "SG0 EP17-23",
+        ep: "SG0 EP17-23, RMG",
         title: "Arc Light operation",
         desc: [
           "__ITER__ 1.097302%",
@@ -675,6 +745,8 @@ const WORLDLINES = [
           'D-Rine to past Daru asking himself to delete all data from servers, alongside rights granted by Maho to do so > <b class="t-b">1.123581%</b>',
           "Team met Maho not because of Amadeus, which no more exists. Leskinen did not completely brainwashed Kagari (not having Amadeus)",
           `Kagari attacks protecting her future but then protects them when they leave, Operation Arc Light success : Mayuri & Suzuha go <a href="#event-08-21" class="t-b dmail-link">to 08-21-2010<img src="${ICON_TIME_MACHINE}" " class="dmail-icon time-machine"></a>`,
+          '__ITER__ 1.064756%',
+          "Suzuha and Kagari go to the past"
         ],
       },
       {
@@ -706,6 +778,24 @@ const WORLDLINES = [
         ],
       },
       {
+        date: "xx-xx-2025",
+        ep: "SG0 PR",
+        title: "Time Leap Machine upgraded : can jump 2 weeks backward"
+      },
+      {
+        date: "03-07-2036 - 1.055821%",
+        ep: "SG0 EP20,21, PR",
+        title: "Okabe's 2011 memories are restored",
+        desc:[
+          "__ITER__ Promised Rinascimento",
+          "2 weeks ago, Daru found Okabe and Kurisu's memories in STRATFOR server (Denki University). He downloaded into Okabe's brain and he awoke 10 days later",
+          `Luka is dead, Okabe decides to return to <a href='event-01-31' class='t-b dmail-link'>01-31-2011<img src='${ICON_LEAP}' class='icon-leap'/></a>`,
+          "__ITER__ ANIME",
+          "Okabe wakes up. Everyone except Daru thought he died in 2025, the year Okabe called Daru telling him to complete the machine, was kidnapped by STRATFO and turned into vegetative state",
+          `Okabe time leaps (needs 3 000 jumps to reach 2011), <a href="#event-2025" class="t-b dmail-link">stopping by 2025<img src="${ICON_LEAP}" " class="icon-leap"></a>`,
+        ]
+      },
+      {
         date: "08-13-2036 - 1.129848%",
         ep: "SG0 CE",
         title: "Suzuha & Kagari departure",
@@ -715,12 +805,10 @@ const WORLDLINES = [
       },
       {
         date: "xx-xx-2036",
-        ep: "SG0 EP20,21, CE",
+        ep: "SG0 AD",
         title: "Dystopian future",
         desc: [
-          "Okabe wakes up. Everyone except Daru thought he died in 2025, the year Okabe called Daru telling him to complete the machine, was kidnapped by STRATFO and turned into vegetative state",
-          "Luka becomes member 006 after being shot",
-          `Okabe time leaps (needs 3 000 jumps to reach 2011), <a href="#event-2025" class="t-b dmail-link">stopping by 2025<img src="${ICON_LEAP}" " class="icon-leap"></a>`,
+          'Attractor Field Theory becomes the common standard model for quantum physics'
         ],
       },
     ],
