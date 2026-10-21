@@ -446,6 +446,11 @@ const WORLDLINES = [
         ]
       },
       {
+        date:"1989 - 1.382733%",
+        ep:"SG0 PB",
+        title:"Berlin Wall is not demolished, Gorbatchev nor Eltsine were never presidents"
+      },
+      {
         date: "1998",
         ep: "SG0 EP4",
         title: "Suzuha lost Kagari",
@@ -457,12 +462,22 @@ const WORLDLINES = [
         ],
       },
       {
+        date: "2000",
+        ep: "SG0 PB, GS",
+        title: "John Titor says WWIII will occur in 2015",
+        desc:[
+          "__ITER__ 1.143688%",
+          "Convergence point for all world lines",
+          "Y2K Problems"
+        ]
+      },
+      {
         date: "2004",
         ep: "MULTIPLE",
         title: "Mayuri's grandmother passes away"
       },
       {
-        date: "09-xx-2010",
+        date: "09-xx-2009",
         ep: "SG0 TA",
         title: "Kurisu joins Chondria Brain Science lab"
       },
@@ -487,7 +502,14 @@ const WORLDLINES = [
           "Fake blood has dried",
           "Okabe tasers Kurisu and is stabbed by Nakabachi, who steals the thesis and flees. Past Okabe witnesses the scene › 3 weeks of suffering = loop preserved",
           `Physical return to 08-21 › <a href="#event-08-21-sg" class="t-sg dmail-link">1.048596%<img src="${ICON_TIME_MACHINE}" " class="dmail-icon time-machine"></a>`,
+          "__ITER__ XDP",
+          "International warrant to find the foreigner killer behind Kurisu's death (officially)"
         ],
+      },
+      {
+        date: "07-xx-2010",
+        ep: "SG0 XDP",
+        title: "JPN-US joint investigation unit visits Chondria lab to get information about Kurisu's death"
       },
       {
         id: "event-08-21",
@@ -515,8 +537,11 @@ const WORLDLINES = [
       },
       {
         date: "11-xx-2010",
-        ep: "SG0 ML",
-        title: "Maho and Leskinen arrive in Japan"
+        ep: "SG0 ML, XDP",
+        title: "Maho and Leskinen arrive in Japan",
+        desc:[
+          "Kurisu's mother got her house burnt by Russians"
+        ]
       },
       {
         date: "11-23-2010",
@@ -541,19 +566,42 @@ const WORLDLINES = [
       },
       {
         date: "12-15-2010 - 1.129848%",
-        ep: "SGO EP23, CE",
+        ep: "SGO EP23, CE, XDP",
         title: "The phone decision",
         desc:[
           "__ITER__ EP23",
           "D-RINE deceive the world received",
           "__ITER__ CE",
-          "Okabe decided to turn his phone off. Okabe and Daru learn about Kagari > <span class='t-b'>1.064750% (Stray Sheep)</span>"
+          "Okabe decided to turn his phone off. Okabe and Daru learn about Kagari > <span class='t-b'>1.064750% (Stray Sheep)</span>",
+          "__ITER__ XDP",
+          "Okabe doesn't turn his phone off. He receives a D-Rine informing him the world can be tricked > continuation on <span class='t-b'> 1.129848% (X-Day Protocol)</span>",
+          "He meets Leskinen and Maho having in mind the desire to stop his participation in Amadeus testing.",
+          "The man who criticized the project at ATC attacked Izaki, Maho and Okabe. He is headshot"
         ]
+      },
+      {
+        date: "12-21-2010 - 1.129848%",
+        ep: "SGO XDP",
+        title: "Daru tells Okabe about Kagari's existence"
       },
       {
         date: "12-23-2010 - 1.064750%",
         ep: "SGO SS",
         title: "Kagari is introduced and meets Mayuri"
+      },
+      {
+        id:"event-12-25-b",
+        date: "12-24-2010",
+        ep: "SGO XDP, PB",
+        title: "Chrismas at war",
+        desc: [
+          "__ITER__ 1.129848% ",
+          `Christmas party > <a href="#event-12-25-b" class="t-b dmail-link">1.382733%<img src="${ICON_LEAP}" " class="icon-leap"></a>`,
+          "__ITER__ 1.382733%",
+          "Okabe is suddently on the front but move to be in a safer place (01-21)",
+          "__ITER__ 1.129954%",
+          "Okabe and Fubuki collapsed, Fubuki is still at the hospital one month later"
+        ]
       },
       {
         date: "12-31-2010",
@@ -645,8 +693,31 @@ const WORLDLINES = [
         ep: "SG0 RMG",
         title: "Kagari is hit by a truck",
         desc:[
-          "Kagari only remembers her past. Guided by GOD's voice, she gets hit by a truck. She remembers her past memories."
+          "Kagari only remembers her past. Guided by GOD's voice, she gets hit by a truck. She remembers her past memories"
         ]
+      },
+      {
+        date: "01-21-2011 - 1.382733%",
+        ep: "SG0 PB",
+        title: "Okabe arrives at an US air base",
+        desc:[
+          "An American soldier hands him a phone, it's Amadeus > <span class='t-b'>1.129954%</span>",
+          "__ITER__ 1.129954%",
+          "'New encephalitis strikes worldwide', heard on TV. It concerns 100 individuals globally, 10 Japanese"
+        ]
+      },
+      {
+        date: "01-23-2011 - 1.129954%",
+        ep: "SG0 PB",
+        title: "New Amadeus phonecall answered",
+        desc:[
+          "Wako and Maho's hotel room are ransacked"
+        ]
+      },
+      {
+        date: "01-26-2011 - 1.129954%",
+        ep: "SG0 PB",
+        title: "Maho and Leskinen leave Japan",
       },
       {
         id:"event-01-31",
@@ -684,41 +755,49 @@ const WORLDLINES = [
         title: "Maho returns to USA",
       },
       {
-        date: "06-xx-2011",
-        ep: "SG0 EP14,15",
+        date: "06-25-2011",
+        ep: "SG0 EP14,15, GS",
         title: "Hope to change the fate",
         desc: [
-          "Daru gathered pieces of time leap machine destroyed by Okabe and asks Maho to help rebuild it",
-          "Meets Leskinen at Japan hospital, Maho still in US",
-          "Kagari returns to the lab in biker clothes",
           "Maho back to Japan",
+          "Daru gathered pieces of time leap machine destroyed by Okabe and asks Maho to help rebuild it",
+          "Meets Leskinen at Japan hospital. Patients suffering of encephalitis are transferred to AH Hospital, including Fubuki",
+          "Okabe offers a Fairy Upa to Mayuri",
+          "Kagari returns to the lab in biker clothes to take her Upa back. She confronted Suzuha and Daru",
         ],
       },
       {
         date: "07-xx-2011",
-        ep: "SG0 EP16",
+        ep: "SG0 EP16, GS",
         title: "Jelly banana, the return",
         desc: [
+          "__ITER__ ANIME",
           "Tanabata soon (7 july)",
           "Okabe finds jelly banana and phone wave 2 (provisional)",
           "Daru explains he tests it because Suzuha can only jump 1 year before due to fuel = ultimate chance to save Kurisu & world",
+          "__ITER__ 1.143688%",
+          "Maho is brainwashed"
         ],
       },
       {
         id: "event-07-06",
         date: "07-06-2011",
-        ep: "SG0 EP22",
+        ep: "SG0 EP22, PB, GS",
         title: "RU US tensions & D-Rine",
         desc: [
           "__ITER__ ITERATION FROM 07-07",
           "Team learns Dr. Nakabachi travelled to RU with Kurisu's paper but did not succeed in completing the machine. RU destroyed the PC to put obstacles on US journey",
           "Daru built D-Rine system (prototype), invisible from ECHELON system. Last spring, only him had the app to receive",
+          "__ITER__ 1.129954%",
+          "Okabe shares everything to Maho (time-travel, thesis, RS...)",
+          "__ITER__ 1.143688%",
+          "Maho sells out Okabe to Leskinen. He is captured and placed in a dark STRATFOR basement. Leskinen plans to torture and export his memory to get information about time-travel"
         ],
       },
       {
         id: "event-07-07",
         date: "07-07-2011",
-        ep: "SG0 EP17-23, RMG",
+        ep: "SG0 EP17-23, RMG, GS",
         title: "Arc Light operation",
         desc: [
           "__ITER__ 1.097302%",
@@ -746,8 +825,17 @@ const WORLDLINES = [
           "Team met Maho not because of Amadeus, which no more exists. Leskinen did not completely brainwashed Kagari (not having Amadeus)",
           `Kagari attacks protecting her future but then protects them when they leave, Operation Arc Light success : Mayuri & Suzuha go <a href="#event-08-21" class="t-b dmail-link">to 08-21-2010<img src="${ICON_TIME_MACHINE}" " class="dmail-icon time-machine"></a>`,
           '__ITER__ 1.064756%',
-          "Suzuha and Kagari go to the past"
+          "Suzuha and Kagari go to the past",
+          "__ITER__ 1.143688%",
+          "Maho tells everything to Mayuri who understands she needs to act",
+          "STRATFOR invades Akihabara and destroyes time machine > the WWIII begins",
+          "Kagari and Maho come to save Okabe. Kagari dies, Leskinen flees, Maho succeeds in rescuing him"
         ],
+      },
+      {
+        date: "07-08-2011 - 1.143688%",
+        ep: "SG0 GS",
+        title: "Okabe awakes at the hospital"
       },
       {
         date: "07-09-2011",
