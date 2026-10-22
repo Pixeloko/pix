@@ -437,6 +437,11 @@ const WORLDLINES = [
     divVal: "1.111111",
     div: { from: "sg", to: "beta", cls: "t-sg" },
     events: [
+      {
+        date: "02-02-1973", 
+        ep: "SG0 PoR", 
+        title: "Z-Program is defined",
+      },
       { id:"1975", 
         date: "08-13-1975", 
         ep: "SG0 CE", 
@@ -707,17 +712,28 @@ const WORLDLINES = [
         ]
       },
       {
-        date: "01-23-2011 - 1.129954%",
+        date: "01-23-2011",
         ep: "SG0 PB",
-        title: "New Amadeus phonecall answered",
+        title: "New Amadeus phonecall",
         desc:[
-          "Wako and Maho's hotel room are ransacked"
+          "__ITER__ 1.129954%",
+          "Call answered",
+          "Wako and Maho's hotel room are ransacked",
+          "__ITER__ (pre) PoR",
+          "Does not answer the call. Okabe tells Maho about everything except his implication in Kurisu's murder",
+          "Intruders arrive at Daru's hideout. Okabe, Daru and Maho bump into Moeka and another masked woman. Rounders are attacked by Russians and the laptop is destroyed",
+          "Wako and Maho's hotel room are ransacked",
+
         ]
       },
       {
         date: "01-26-2011 - 1.129954%",
-        ep: "SG0 PB",
+        ep: "SG0 PB, PR",
         title: "Maho and Leskinen leave Japan",
+        desc: [
+          "__ITER__ (pre) PoR",
+          "Okabe's participation to Amadeus project ends"
+        ]
       },
       {
         id:"event-01-31",
@@ -772,12 +788,16 @@ const WORLDLINES = [
         title: "Jelly banana, the return",
         desc: [
           "__ITER__ ANIME",
-          "Tanabata soon (7 july)",
-          "Okabe finds jelly banana and phone wave 2 (provisional)",
+          "Okabe finds jelly banana and Phonewave 2 (provisional)",
           "Daru explains he tests it because Suzuha can only jump 1 year before due to fuel = ultimate chance to save Kurisu & world",
           "__ITER__ 1.143688%",
-          "Maho is brainwashed"
+          "Maho is brainwashed",
         ],
+      },
+      {
+        date: "07-03-2011",
+        ep: "SG0 PoR",
+        title: "Maho and Leskinen return to Japan, Okabe is aware of Maho's returnal (≠GS)"
       },
       {
         id: "event-07-06",
@@ -869,6 +889,11 @@ const WORLDLINES = [
         date: "xx-xx-2025",
         ep: "SG0 PR",
         title: "Time Leap Machine upgraded : can jump 2 weeks backward"
+      },
+      {
+        date: "xx-xx-2032",
+        ep: "SG0 PoR",
+        title: "Kagari Shiina is registered as her name"
       },
       {
         date: "03-07-2036 - 1.055821%",
