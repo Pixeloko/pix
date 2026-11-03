@@ -283,7 +283,7 @@ const WORLDLINES = [
       },
       {
         date: "08-15-2010",
-        ep: "EP21,22 CH9OG",
+        ep: "EP21,22 CH9OG, BABEL CD",
         title: "Déjà vu - IBN stolen",
         desc: [
           "__ITER__ ITERATION CONTINUATION FROM 08-13 0.571046%",
@@ -292,6 +292,8 @@ const WORLDLINES = [
           "__ITER__ 0.523307%",
           "Luka D-Mail undone",
           "Eisuke goes to check treasury, storehouse's lock is broken",
+          "__ITER__ 0.571046%",
+          "Kurisu and Faris listen to Nakabachi tape"
         ],
       },
       {
@@ -418,12 +420,22 @@ const WORLDLINES = [
           "__ITER__Iteration continuation from 06-30",
           '<p id="event-06-30"> Every member faintly remembers Okabe</p> and cheers Kurisu on to retry; she goes to the past again to kiss young Okabe › success',
           "Okabe is pulled into the SG worldline; people materialize around him",
+          "__ITER__ POSTERIORI EXISTENCE CD",
+          "Last time Okabe talked to Kurisu"
         ],
       },
       {
         date: "08-11-2011",
         ep: "MOV",
         title: `Daru hacks SERN; Kurisu builds the time leap and returns to <a href="#event-08-03" class="t-sg dmail-link">08-03<img src="${ICON_LEAP}" " class="icon-leap"></a>`,
+      },
+      {
+        date: "05-06-2036",
+        ep: "POSTERIORI EXISTENCE CD",
+        title: "A plan in the logs",
+        desc: [
+          `Suzuha reads Kurisu's log diary containing a plan to save Okabe from the R-line. Suzuha goes <a href="#event-08-03" class="t-sg dmail-link">alone to the past<img src="${ICON_TIME_MACHINE}" " class="dmail-icon time-machine"></a>, Kurisu already lost hope.`,
+        ]
       },
     ],
   },
@@ -454,6 +466,11 @@ const WORLDLINES = [
         date:"1989 - 1.382733%",
         ep:"SG0 PB",
         title:"Berlin Wall is not demolished, Gorbatchev nor Eltsine were never presidents"
+      },
+      {
+        date:"1991 - 1.129954%",
+        ep:"SG0 VG",
+        title:"Leskinen finds Kagari and plans plastic surgery for her"
       },
       {
         date: "1998",
@@ -517,9 +534,15 @@ const WORLDLINES = [
         title: "JPN-US joint investigation unit visits Chondria lab to get information about Kurisu's death"
       },
       {
+        date: "08-07-2010 - 1.130205%",
+        ep: "ARCLIGHT CD",
+        title: "Okabe and Mayuri dispute",
+
+      },
+      {
         id: "event-08-21",
         date: "08-21-2010",
-        ep: "EP23,24,23b, SG0 EP23 (multiple)",
+        ep: "EP23,24,23b, SG0 EP23, ARCLIGHT CD, BABEL MANGA",
         title: "Attempts to save Kurisu & the world",
         desc: [
           "__ITER__ ITERATION CONTINUATION FROM 08-17 alpha - 1.130205%",
@@ -536,8 +559,8 @@ const WORLDLINES = [
           "Kurisu's thesis is stolen by her father, who flees to Russia",
           "__ITER__ ITERATION FROM 07-07-2011",
           'Future Mayuri cheers Mayuri to encourage Okabe to save Kurisu > no more fuel, pulled in 18000BC (they will be saved by 2025 Okabe, disappearing from the line to ensure his "death")',
-          "__ITER__ 1.130205%",
           "(Aishin Meizu no Babel) Okabe dismantles IBN and Phonewave",
+          "(ARCLIGHT CD) 2 time machines appear in front of Mayuri and Daru, Mayuri receives a call"
         ],
       },
       {
@@ -817,12 +840,13 @@ const WORLDLINES = [
       {
         id: "event-07-07",
         date: "07-07-2011",
-        ep: "SG0 EP17-23, RMG, GS",
+        ep: "SG0 EP17-23, RMG, GS, VG",
         title: "Arc Light operation",
         desc: [
           "__ITER__ 1.097302%",
           "Mayuri understands she stopped Okabe to save Kurisu",
-          '15:16 no network only "controlled information". Amadeus (+knowledge about time-travel) hacked',
+          '15:16 no network only "controlled information".',
+          'Amadeus (+knowledge about time-travel) hacked',
           "Mayuri asks Suzuha to go to 08-21 with her",
           "Bike girl eliminated by Suzuha, who also shoots Okabe",
           "Suzuha receives D-Mail video from 2025 Daru detailing operation Arc Light",
@@ -849,7 +873,15 @@ const WORLDLINES = [
           "__ITER__ 1.143688%",
           "Maho tells everything to Mayuri who understands she needs to act",
           "STRATFOR invades Akihabara and destroyes time machine > the WWIII begins",
-          "Kagari and Maho come to save Okabe. Kagari dies, Leskinen flees, Maho succeeds in rescuing him"
+          "Kagari and Maho come to save Okabe. Kagari dies, Leskinen flees, Maho succeeds in rescuing him",
+          "__ITER__ 1.129954%",
+          "Cellphones tower shutdown in Akihabara",
+          "Leskinen cracked Amadeus's secret data. Amadeus [Kurisu] and [Maho] disappear from Chondria's servers",
+          'Fake Yuki dies. Time machine is destroyed "two bodies vanished"',
+          "__ITER__ 1.129954% ITERATION FROM 07-09",
+          "Daru hacks/remove Amadeus",
+          "Mayuri tosses hard drive before leaving with Suzuha. Operation successful",
+          "Moeka shoots Kagari because she tricked her with FB"
         ],
       },
       {
@@ -859,8 +891,13 @@ const WORLDLINES = [
       },
       {
         date: "07-09-2011",
-        ep: "SG0 EP19",
-        title: `Daru retrieves Amadeus & hacks SERN > <a href="#event-07-07" class="t-b dmail-link">time leap to 7th 15:00<img src="${ICON_LEAP}" " class="icon-leap"></a>`,
+        ep: "SG0 EP19, VG",
+        title : "Time Leap Machine is done",
+        desc: [
+          `Daru retrieves Amadeus & hacks SERN > <a href="#event-07-07" class="t-b dmail-link">time leap to 7th 15:00<img src="${ICON_LEAP}" " class="icon-leap"></a>`,
+        "__ITER__ 1.129954",
+        `Time Leap Machine v.2 is finished > Okabe time leaps to <a href="#event-07-07" class="t-b dmail-link">07-07, 5:45PM<img src="${ICON_LEAP}" " class="icon-leap"></a>`
+      ]
       },
       {
         id: "event-2025",

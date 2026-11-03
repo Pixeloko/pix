@@ -44,7 +44,7 @@ body::before {
 
 /* ============================== HEADER ============================== */
 header {
-  min-height: 100vh;
+  min-height: 110vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,18 +103,12 @@ header .tag {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
   stroke-width: 3;
-  transition: stroke-dashoffset 1.4s ease;
 }
 
 .divergence.visible .div-path {
   stroke-dashoffset: 0;
 }
 
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
 
 /* ============================== WORLDLINES ============================== */
 .worldline {
@@ -131,15 +125,7 @@ header .tag {
   width: 3px;
   background: var(--c);
   box-shadow: 0 0 16px 1px var(--c);
-  transform: scaleY(0);
-  transform-origin: top; 
-  transition: transform 1.1s ease;
   opacity: 0.85;
-}
-
-.worldline.visible .rail {
-  transform: scaleY(1);
-  top: -10px;
 }
 
 .wl-head {
@@ -540,25 +526,34 @@ input[type="file"] {
   padding: 10px;
 }
 
+.chip:hover {
+  box-shadow: 0 0 10px #e7ecf5; 
+}
+
 /* ============================== DIVERGENCE SEARCH ============================== */
 .divergence-search {
   position: sticky;
-  top: 0;
   z-index: 1;
-  padding: 14px 14px 12px;
-  background: var(0,0,0,0.5);
+  background: rgba(0,0,0,0.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px); /*Safari*/
-  border-bottom: 1px solid var(--line);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  text-align: left;
+  max-width: 660px;
+  width: 100%;
+  margin: 0 auto;
   gap: 10px;
 }
 
+#divergence-search-border {
+  border-bottom: 1px solid var(--line);
+  padding: 30px
+}
+
 .divergence-search-desc {
-  padding-left: 50px;
-  padding-right: 50px;
+  padding: 0;
+  text-align: left;
 }
 
 .divergence-search form {

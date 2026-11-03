@@ -40,14 +40,16 @@
        <a href="#wl-5" class="chip t-g" data-target="wl-5"><i></i>γ Gamma</a>
    </nav>
     
-    <nav class="divergence-search">
-        <p class="divergence-search-desc">Enter a precise World Line divergence or <span class="t-b">"1.111111%" (beta AF)</span>, <span class="t-a">"0.000000%" (alpha AF)</span>, ...</p>
-        <form id="searchForm" autocomplete="off">
-            <input type="text" id="divInput" placeholder="e.g. 0.571024%" spellcheck="false" maxlength="9">
-            <button type="submit">SEARCH</button>
-            <button type="button" id="resetBtn">RESET</button>
-        </form>
-    </nav>
+   <div id="divergence-search-border">
+        <nav class="divergence-search">
+            <p class="divergence-search-desc">World Line search engine</p>
+            <form id="searchForm" autocomplete="off">
+                <input type="text" id="divInput" placeholder="1.048596%" spellcheck="false" maxlength="9">
+                <button type="submit">SEARCH</button>
+                <button type="button" id="resetBtn">RESET</button>
+            </form>
+        </nav>
+    </div>
     
     <!-- ============================== TIMELINE ============================== -->
     <main class="timeline" id="timeline"></main>
